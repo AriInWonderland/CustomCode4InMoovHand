@@ -27,6 +27,7 @@ void print_menu(){
     Serial.println("|  4. Move the wrist.\t\t\t|");
     Serial.println("|  5. Bad hand.\t\t\t\t|");
     Serial.println("|  6. Otaku o peronista??.\t\t|");
+    Serial.println("|  7. Slowwwwwww home.\t\t\t|");
     repeater(LENGTH, '+','-','+');
     Serial.print("\n\n\n");
 }

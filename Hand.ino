@@ -31,6 +31,8 @@ void setup(){
 
 void loop(){
     int read = Serial.parseInt();
+    if(read)
+        Serial.flush();
         switch(read){
             case -1:
                 Serial.println("Homing...");
@@ -55,9 +57,15 @@ void loop(){
             case 5:
                 Serial.println("Haha god.");
                 not_good(servs);
+                break;
             case 6:
                 Serial.println("Miku, Miku, you can call me Miku");
                 Otaku_O_Peronista(servs);
+                break;
+            case 7:
+                Serial.println("Slow motion");
+                config(servs);
+                break;
             default:
                 break;
        }

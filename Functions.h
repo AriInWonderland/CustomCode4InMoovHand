@@ -81,3 +81,26 @@ void Otaku_O_Peronista(Servo[]){
     delay(500);
     servs[pulgar].write(180);
 }
+
+void config(Servo[]){
+    int i;
+    for(i=0; i<=9; i++){
+        servs[i].write(90);
+        delay(1000);
+    }
+    delay(2500);
+    for(i=0; i<=9; i++){
+        servs[i].write(0);
+        delay(1000);
+    }    
+    delay(2500);
+    for(i=0; i<=9; i++){
+        servs[i].write(180);
+        delay(1000);
+    }
+    delay(2500);
+    for(i=0; i<=9; i++){
+        servs[i].write(0);
+        delay(1000);
+    }
+}
