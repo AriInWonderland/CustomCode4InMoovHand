@@ -9,6 +9,7 @@
 #include <Servo.h>
 #include "PinOut.h"
 #include "Functions.h"
+#include "Menus.h"
 
 void print_menu();
 
@@ -23,7 +24,9 @@ void setup(){
     pinMode(8, INPUT_PULLUP);
 
     Serial.begin(9600);
+    print_pinout();
     print_menu();
+    input_history();
 }
 
 void loop(){
@@ -52,7 +55,9 @@ void loop(){
             case 5:
                 Serial.println("Haha god.");
                 not_good(servs);
-                break;
+            case 6:
+                Serial.println("Miku, Miku, you can call me Miku");
+                Otaku_O_Peronista(servs);
             default:
                 break;
        }

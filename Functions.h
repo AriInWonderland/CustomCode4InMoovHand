@@ -58,16 +58,6 @@ void only_wrist(Servo[]){
     servs[wrist].write(0);
 }
 
-void print_menu(){
-    Serial.println("Menu:");
-    Serial.println(" -1. Home.");
-    Serial.println("  1. Go to 0.");
-    Serial.println("  2. Close and open the hand.");
-    Serial.println("  3. Metallica horns.");
-    Serial.println("  4. Move the wrist.");
-    Serial.println("  5. Bad hand.");
-}
-
 void not_good(Servo[]){
     servs[pinky].write(180);
     delay(500);
@@ -76,6 +66,18 @@ void not_good(Servo[]){
     servs[mayor].write(0);
     delay(500);
     servs[indice].write(180);
+    delay(500);
+    servs[pulgar].write(180);
+}
+
+void Otaku_O_Peronista(Servo[]){
+    servs[pinky].write(180);
+    delay(500);
+    servs[anular].write(180);
+    delay(500);
+    servs[mayor].write(0);
+    delay(500);
+    servs[indice].write(0);
     delay(500);
     servs[pulgar].write(180);
 }
