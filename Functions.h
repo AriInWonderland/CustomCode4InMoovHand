@@ -4,6 +4,7 @@ void to_zero(Servo[]){
         servs[i].write(0);
         delay(250);
     }
+    Serial.println("Done...");
 }
 
 void home_custom(Servo[]){
@@ -17,6 +18,7 @@ void home_custom(Servo[]){
 
     for(i=0; i<=NSERVOS; i++)
         servs[i].write(0);
+    Serial.println("Done...");
 }
 
 void close_open(Servo[]){
@@ -31,6 +33,7 @@ void close_open(Servo[]){
         servs[i].write(0);
         delay(500);
     }
+    Serial.println("Done...");
 }
 
 void metallica(Servo[]){
@@ -49,6 +52,7 @@ void metallica(Servo[]){
     servs[wrist].write(0);
     delay(500);
     servs[wrist].write(180);
+    Serial.println("Done...");
 }
 
 void only_wrist(Servo[]){
@@ -56,6 +60,7 @@ void only_wrist(Servo[]){
     servs[wrist].write(0);
     servs[wrist].write(180);
     servs[wrist].write(0);
+    Serial.println("Done...");
 }
 
 void not_good(Servo[]){
@@ -68,6 +73,7 @@ void not_good(Servo[]){
     servs[indice].write(180);
     delay(500);
     servs[pulgar].write(180);
+    Serial.println("Done...");
 }
 
 void Otaku_O_Peronista(Servo[]){
@@ -80,6 +86,7 @@ void Otaku_O_Peronista(Servo[]){
     servs[indice].write(0);
     delay(500);
     servs[pulgar].write(180);
+    Serial.println("Done...");
 }
 
 void config(Servo[]){
@@ -103,4 +110,5 @@ void config(Servo[]){
         servs[i].write(0);
         delay(1000);
     }
+    Serial.println("Done...");
 }
