@@ -1,17 +1,25 @@
-/*PINOUT:
+/*PINOUT Derecha:
 2 Mu;eca
 3 Me;ique
 4 Anular
 5 Mayor
 6 Indce
 7 Pulgar
+
+PinOut Izquierda:
+14 Mue;ca
+15 Me;ique
+16 Anular
+17 Mayor
+18 Indice
+19 Pulgar
 */
 #include <Servo.h>
 #include "PinOut.h"
-#include "Functions.h"
+#include "RMenu.h"
+#include "RFunctions.h"
+#include "RFlow.h"
 #include "Menus.h"
-
-void print_menu();
 
 void setup(){
     servs[wrist].attach(wrist);
@@ -25,48 +33,23 @@ void setup(){
 
     Serial.begin(9600);
     print_pinout();
-    print_menu();
-    input_history();
+    profile_menu();
+    //input_history();
 }
 
 void loop(){
-    int read = Serial.parseInt();
-    if(read)
-        Serial.flush();
-        switch(read){
-            case -1:
-                Serial.println("Homing...");
-                home_custom(servs);
-                break;
-            case 1:
-                Serial.println("Going to 0");
-                to_zero(servs);
-                break;
-            case 2:
-                Serial.println("Close_Open function");
-                close_open(servs);
-                break;
-            case 3:
-                Serial.println("The Unforgiven");
-                metallica(servs);
-                break;
-            case 4:
-                Serial.println("Only wrist");
-                only_wrist(servs);
-                break;
-            case 5:
-                Serial.println("Haha god.");
-                not_good(servs);
-                break;
-            case 6:
-                Serial.println("Miku, Miku, you can call me Miku");
-                Otaku_O_Peronista(servs);
-                break;
-            case 7:
-                Serial.println("Slow motion");
-                config(servs);
-                break;
-            default:
-                break;
-       }
+    switch(profile_menu()){
+        case 1:
+            Serial.println("Right Hand");
+            right_menu();
+            break;
+        case 2:
+            Serial.println("Left Hand");
+            break;
+        case 3:
+            Serial.println("Dual");
+            break;
+        default:  
+            break;
+    } 
 }

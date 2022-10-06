@@ -19,7 +19,10 @@
                 "/home/alice/Arduino/libraries/Servo/src",
                 "/home/alice/.arduino15/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/lib/gcc/avr/4.9.2/include",
                 "/home/alice/.arduino15/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/lib/gcc/avr/4.9.2/include-fixed",
-                "/home/alice/.arduino15/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/avr/include"
+                "/home/alice/.arduino15/packages/arduino/tools/avr-gcc/4.9.2-atmel3.5.4-arduino2/avr/include",
+                "${workspaceFolder}/RightHand",
+                "${workspaceFolder}/LeftHand",
+                "${workspaceFolder}/Dual"
             ],
             "forcedInclude": [
                 "/home/alice/.arduino15/packages/arduino/hardware/avr/1.6.21/cores/arduino/Arduino.h"

@@ -2,5 +2,11 @@
 #define NSERVOS 8
 
 Servo servs[NSERVOS];
-#define wrist 2
-enum Dedos {pinky=3, anular, mayor, indice, pulgar};
+
+//Right Hand
+#define Rwrist 2
+enum RDedos {Rpinky=3, Ranular, Rmayor, Rindice, Rpulgar};
+
+//Left Hand
+#define Lwrist 14
+enum LDedos {Lpinky=15, Lanular, Lmayor, Lindice, Lpulgar};
