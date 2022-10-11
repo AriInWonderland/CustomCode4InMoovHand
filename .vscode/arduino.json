@@ -1,7 +1,6 @@
 {
     "port": "/dev/ttyACM0",
-    "board": "arduino:avr:mega",
+    "board": "arduino:avr:uno",
     "programmer": "arduino:avrispmkii",
-    "sketch": "Hand.ino",
-    "configuration": "cpu=atmega2560"
+    "sketch": "Hand.ino"
 }

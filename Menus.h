@@ -24,15 +24,16 @@ void print_pinout(){
     Serial.print("\n\n\n");
 }
 
-int profile_menu(){
+void profile_menu(){
     repeater(LENGTH, '+', '-', '+');
-    Serial.println("| Choose a profile:\t\t|");
+    Serial.println("\n| Choose a profile:\t\t|");
     repeater(LENGTH, '+', '-', '+');
-    Serial.println("|  1. Right Hand\t\t|");
+    Serial.println("\n|  1. Right Hand\t\t|");
     Serial.println("|  2. Left Hand\t\t|");
     Serial.println("|  3. Dual Mode\t\t|");
     repeater(LENGTH, '+', '-', '+');
-    return Serial.parseInt();
+    Serial.print("\n");
+    return;
 }
 
 void input_history(){

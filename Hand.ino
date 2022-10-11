@@ -16,29 +16,23 @@ PinOut Izquierda:
 */
 #include <Servo.h>
 #include "PinOut.h"
-#include "RMenu.h"
+#include "Menus.h"
 #include "RFunctions.h"
 #include "RFlow.h"
-#include "Menus.h"
+#include "RMenu.h"
 
 void setup(){
-    servs[wrist].attach(wrist);
-    servs[pinky].attach(pinky);
-    servs[anular].attach(anular);
-    servs[mayor].attach(mayor);
-    servs[indice].attach(indice);
-    servs[pulgar].attach(pulgar);
-
+    attachServos();
     pinMode(8, INPUT_PULLUP);
 
     Serial.begin(9600);
     print_pinout();
-    profile_menu();
     //input_history();
+    profile_menu();
 }
 
 void loop(){
-    switch(profile_menu()){
+    switch(Serial.parseInt()){
         case 1:
             Serial.println("Right Hand");
             right_menu();

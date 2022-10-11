@@ -37,55 +37,55 @@ void close_open(Servo[]){
 }
 
 void metallica(Servo[]){
-    servs[wrist].write(90);
+    servs[Rwrist].write(90);
     delay(500);
-    servs[pinky].write(0);
+    servs[Rpinky].write(0);
     delay(500);
-    servs[anular].write(180);
+    servs[Ranular].write(180);
     delay(500);
-    servs[mayor].write(180);
+    servs[Rmayor].write(180);
     delay(500);
-    servs[indice].write(0);
+    servs[Rindice].write(0);
     delay(500);
-    servs[pulgar].write(180);
+    servs[Rpulgar].write(180);
     delay(500);
-    servs[wrist].write(0);
+    servs[Rwrist].write(0);
     delay(500);
-    servs[wrist].write(180);
+    servs[Rwrist].write(180);
     Serial.println("Done...");
 }
 
 void only_wrist(Servo[]){
-    servs[wrist].write(90);
-    servs[wrist].write(0);
-    servs[wrist].write(180);
-    servs[wrist].write(0);
+    servs[Rwrist].write(90);
+    servs[Rwrist].write(0);
+    servs[Rwrist].write(180);
+    servs[Rwrist].write(0);
     Serial.println("Done...");
 }
 
 void not_good(Servo[]){
-    servs[pinky].write(180);
+    servs[Rpinky].write(180);
     delay(500);
-    servs[anular].write(180);
+    servs[Ranular].write(180);
     delay(500);
-    servs[mayor].write(0);
+    servs[Rmayor].write(0);
     delay(500);
-    servs[indice].write(180);
+    servs[Rindice].write(180);
     delay(500);
-    servs[pulgar].write(180);
+    servs[Rpulgar].write(180);
     Serial.println("Done...");
 }
 
 void Otaku_O_Peronista(Servo[]){
-    servs[pinky].write(180);
+    servs[Rpinky].write(180);
     delay(500);
-    servs[anular].write(180);
+    servs[Ranular].write(180);
     delay(500);
-    servs[mayor].write(0);
+    servs[Rmayor].write(0);
     delay(500);
-    servs[indice].write(0);
+    servs[Rindice].write(0);
     delay(500);
-    servs[pulgar].write(180);
+    servs[Rpulgar].write(180);
     Serial.println("Done...");
 }
 
@@ -111,4 +111,34 @@ void config(Servo[]){
         delay(1000);
     }
     Serial.println("Done...");
+}
+
+void right_fingers(){
+    int read = Serial.parseInt();
+    int ang;
+    if(read == -1)
+        return;
+    if(read){
+        Serial.flush();
+        while((ang = Serial.parseInt()) != -1)
+            servs[read].write(ang);
+        return;
+    } 
+}
+
+void play_menu(){
+    int check = 0;
+    repeater(LENGTH, '+','-','+');
+    Serial.println("\n| What do you want to move?");
+    Serial.println("| -1. Salir.");
+    Serial.println("|  2. Muñeca");
+    Serial.println("|  3. Meñique");
+    Serial.println("|  4. Anular");
+    Serial.println("|  5. Mayor");
+    Serial.println("|  6. Indice");
+    Serial.println("|  7. Pulgar");
+    repeater(LENGTH, '+','-','+');
+
+    right_fingers();
+    return;
 }

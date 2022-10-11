@@ -10,9 +10,11 @@ void right_menu(){
     Serial.println("|  5. Bad hand.\t\t\t\t|");
     Serial.println("|  6. Otaku o peronista??.\t\t|");
     Serial.println("|  7. Slowwwwwww home.\t\t\t|");
+    Serial.println("|  8. Let's play.");
     repeater(LENGTH, '+','-','+');
     Serial.print("\n\n\n");   
 
     right_input();
-}
 
+    return;
+}
