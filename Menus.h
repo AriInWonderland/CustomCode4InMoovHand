@@ -2,16 +2,17 @@
 
 void repeater(int i, char l, char c, char r){
     int a=1;
-    Serial.print(l);
 
+    Serial.print(l);
     for(; a<i; a++)
         Serial.print(c);
     Serial.print(r);
 }
 
 void print_pinout(){
+    Serial.println("\n\n");
     repeater(LENGTH, '+','-','+');
-    Serial.println("\n| PinOut Right Hand:\t\t|");
+    Serial.println("\n| PinOut Right Hand:\t\t\t|");
     repeater(LENGTH,'+','-','+');
     Serial.println("\n|  2. Wrist.\t\t\t\t|");
     Serial.println("|  3. Pinky.\t\t\t\t|");
@@ -26,11 +27,11 @@ void print_pinout(){
 
 void profile_menu(){
     repeater(LENGTH, '+', '-', '+');
-    Serial.println("\n| Choose a profile:\t\t|");
+    Serial.println("\n| Choose a profile:\t\t\t|");
     repeater(LENGTH, '+', '-', '+');
-    Serial.println("\n|  1. Right Hand\t\t|");
-    Serial.println("|  2. Left Hand\t\t|");
-    Serial.println("|  3. Dual Mode\t\t|");
+    Serial.println("\n|  1. Right Hand\t\t\t|");
+    Serial.println("|  2. Left Hand\t\t\t\t|");
+    Serial.println("|  3. Dual Mode\t\t\t\t|");
     repeater(LENGTH, '+', '-', '+');
     Serial.print("\n");
     return;

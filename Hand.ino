@@ -26,16 +26,20 @@ void setup(){
     pinMode(8, INPUT_PULLUP);
 
     Serial.begin(9600);
+    Serial.flush();
     print_pinout();
     //input_history();
     profile_menu();
+    Serial.flush();
 }
 
 void loop(){
-    switch(Serial.parseInt()){
+    int read;
+    read = Serial.parseInt();
+    switch(read){
         case 1:
-            Serial.println("Right Hand");
             right_menu();
+            profile_menu();
             break;
         case 2:
             Serial.println("Left Hand");
