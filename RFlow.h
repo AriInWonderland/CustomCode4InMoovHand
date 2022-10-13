@@ -1,5 +1,11 @@
+void right_menu();
+
 void right_input(){
-    int check=0;
+    static int check=0;
+    if(check == -1){
+        check = 0;
+        return;
+    }
     while(check == 0){
         switch(Serial.parseInt()){
             case -1:
@@ -40,6 +46,7 @@ void right_input(){
                 break;
             case 9:
                 play_menu();
+                right_menu();
                 break;
             default:
                 break; 

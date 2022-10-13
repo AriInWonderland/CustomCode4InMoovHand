@@ -12,15 +12,20 @@ void repeater(int i, char l, char c, char r){
 void print_pinout(){
     Serial.println("\n\n");
     repeater(LENGTH, '+','-','+');
-    Serial.println("\n| PinOut Right Hand:\t\t\t|");
+    Serial.println("\n| PinOut:\t\t\t\t|");
     repeater(LENGTH,'+','-','+');
-    Serial.println("\n|  2. Wrist.\t\t\t\t|");
-    Serial.println("|  3. Pinky.\t\t\t\t|");
-    Serial.println("|  4. Anular.\t\t\t\t|");
-    Serial.println("|  5. Mayor.\t\t\t\t|");
-    Serial.println("|  6. Indice.\t\t\t\t|");
-    Serial.println("|  7. Pulgar.\t\t\t\t|");
-    Serial.println("| 14. ");
+    Serial.println("\n|  2. Muñeca Derecha\t\t\t|");
+    Serial.println("|  3. Meñique Derecha\t\t\t|");
+    Serial.println("|  4. Anular Derecho.\t\t\t|");
+    Serial.println("|  5. Mayor Derecho.\t\t\t|");
+    Serial.println("|  6. Indice Derecho.\t\t\t|");
+    Serial.println("|  7. Pulgar Derecho.\t\t\t|");
+    Serial.println("| 14. Muñeca Izquierda.\t\t\t|");
+    Serial.println("| 15. Meñique Izquierdo.\t\t| ");
+    Serial.println("| 16. Anular Izquierdo.\t\t\t|");
+    Serial.println("| 17. Mayor Izquierdo.\t\t\t|");
+    Serial.println("| 18. Indice Izquierdo.\t\t\t|");
+    Serial.println("| 19. Pulgar Izquierdo.\t\t\t|");
     repeater(LENGTH, '+','-','+');
     Serial.print("\n\n\n");
 }
