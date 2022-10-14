@@ -17,7 +17,7 @@ void right_input(){
                 to_zero(servs);
                 break;
             case 2:
-                Serial.println("Close_Open function");
+                Serial.println("Open and close function");
                 close_open(servs);
                 break;
             case 3:

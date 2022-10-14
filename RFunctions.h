@@ -1,6 +1,20 @@
-void pre(){
-    for(int i=0; i<=NSERVOS; i++)
-        servs[i].write(180);
+//   0 = close
+// 180 = open
+
+//1 = abrir, 0 = cerrar
+void move_index(int c){
+    int last_ang = servs[Rpulgar].read();
+    if(last_ang < 180){
+        servs[Rpulgar].write(180);
+        delay(500);
+        if(c)
+            servs[Rindice].write(180);
+        else
+            servs[Rindice].write(0);
+        delay(500);
+        servs[Rpulgar].write(last_ang);
+    }
+    return;
 }
 
 void to_zero(Servo[]){
@@ -21,20 +35,28 @@ void home_custom(Servo[]){
     for(i=0; i<=NSERVOS; i++)
         servs[i].write(180);
 
-    for(i=0; i<=NSERVOS; i++)
+    for(i=0; i<=NSERVOS; i++){
         servs[i].write(0);
+    t is mentioned}
     Serial.println("Done...");
 }
+
 void close_open(Servo[]){
     int i;
 
     for(i=1; i<=NSERVOS; i++){
-        servs[i].write(180);
+        if(i=Rindice)
+            move_index(1);
+        else
+            servs[i].write(180);
         delay(100);
     }
     delay(1000);
     for(; i>=0; i--){
-        servs[i].write(0);
+        if(i=Rindice)
+            move_index(0);
+        else 
+            servs[i].write(0);
         delay(100);
     }
     Serial.println("Done...");
@@ -45,8 +67,7 @@ void metallica(Servo[]){
     servs[Rpinky].write(180);
     servs[Ranular].write(0);
     servs[Rmayor].write(0);
-    servs[Rindice].write(180);
-    servs[Rpulgar].write(0);
+    move_index(1);
     servs[Rwrist].write(180);
     servs[Rwrist].write(0);
     Serial.println("Done...");
@@ -61,23 +82,19 @@ void only_wrist(Servo[]){
 }
 
 void not_good(Servo[]){
-    pre();
-    delay(250);
     servs[Rpinky].write(0);
     servs[Ranular].write(0);
     servs[Rmayor].write(180);
-    servs[Rindice].write(0);
+    move_index(0);
     servs[Rpulgar].write(0);
     Serial.println("Done...");
 }
 
 void Otaku_O_Peronista(Servo[]){
-    pre();
-    delay(250);
     servs[Rpinky].write(0);
     servs[Ranular].write(0);
     servs[Rmayor].write(180);
-    servs[Rindice].write(180);
+    move_index(1);
     servs[Rpulgar].write(0);
     Serial.println("Done...");
 }

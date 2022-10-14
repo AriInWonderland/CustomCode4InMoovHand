@@ -26,3 +26,7 @@ void attachServos(){
     servs[Lpulgar].attach(Lpulgar);
     return;
 }
+
+
+//180 abre 0 cierra
+//1 abrir  0 cerrar (move_index)

@@ -3,8 +3,8 @@ void right_menu(){
     Serial.println("\n| Menu:\t\t\t\t\t|");
     repeater(LENGTH,'+','-','+');
     Serial.println("\n| -1. Exit.\t\t\t\t|");
-    Serial.println("|  1. Go to 0.\t\t\t\t|");
-    Serial.println("|  2. Close and open the hand.\t\t|");
+    Serial.println("|  1. Go to 0 (Closes the hand).\t|");
+    Serial.println("|  2. Open and close the hand.\t\t|");
     Serial.println("|  3. Metallica horns.\t\t\t|");
     Serial.println("|  4. Move the wrist.\t\t\t|");
     Serial.println("|  5. Bad hand.\t\t\t\t|");
