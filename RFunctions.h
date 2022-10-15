@@ -4,7 +4,7 @@
 //1 = abrir, 0 = cerrar
 void move_index(int c){
     int last_ang = servs[Rpulgar].read();
-    if(last_ang < 180){
+    if(last_ang < 180 && servs[Rindice].read() != 180){
         servs[Rpulgar].write(180);
         delay(500);
         if(c)
@@ -37,7 +37,7 @@ void home_custom(Servo[]){
 
     for(i=0; i<=NSERVOS; i++){
         servs[i].write(0);
-    t is mentioned}
+    }
     Serial.println("Done...");
 }
 
@@ -124,57 +124,62 @@ void config(Servo[]){
 }
 
 int finger_switch(){
-    int r, check = 0;
-    Serial.println("\n\n");
+    int r=0, check = 0;
+    Serial.println("\n");
     repeater(LENGTH, '+', '-', '+');
-    r = Serial.parseInt(); 
-    if(r!=0)
-        while(check = 0)
-            switch(r){
-                case -1:
-                    check = r;
-                    return r;
-                case 2:
-                    Serial.println("Muñeca");
-                    check = r;
-                    return r;
-                case 3:
-                    Serial.println("Meñique");
-                    check = r;
-                    return r;
-                case 4:
-                    Serial.println("Anular");
-                    check = r;
-                    return r;
-                case 5:
-                    Serial.println("Mayor");
-                    check = r;
-                    return r;
-                case 6:
-                    Serial.println("Indice");
-                    check = r;
-                    return r;
-                case 7:
-                    Serial.println("Pulgar.");
-                    check = r;
-                    return r;
-                default:
-                    break;
+    Serial.print("\n");
+    while(r == 0)
+        r = Serial.parseInt(); 
+    switch(r){
+        case -1:
+            return r;
+        case 2:
+            Serial.println("|\t\tMuñeca\t\t\t|");
+            repeater(LENGTH, '+', '-', '+');
+            Serial.println("");
+            return r;
+        case 3:
+            Serial.println("|\t\tMeñique\t\t\t|");
+            repeater(LENGTH, '+', '-', '+');
+            Serial.println("");
+            return r;
+        case 4:
+            Serial.println("|\t\tAnular\t\t\t|");
+            repeater(LENGTH, '+', '-', '+');
+            Serial.println("");
+            return r;
+        case 5:
+            Serial.println("|\t\tMayor\t\t\t|");
+            repeater(LENGTH, '+', '-', '+');
+            Serial.println("");
+            return r;
+        case 6:
+            Serial.println("|\t\tIndice\t\t\t|");
+            repeater(LENGTH, '+', '-', '+');
+            Serial.println("");
+            return r;
+        case 7:
+            Serial.println("|\t\tPulgar\t\t\t|");
+            repeater(LENGTH, '+', '-', '+');
+            Serial.println("");
+            return r;
+        default:
+            break;
     }
-    repeater(LENGTH, '+', '-', '+');
     return r;
 }
 
 void right_fingers(){
-    int ang, read = 0, check = 1;
+    int ang, servo, check = 1;
     //Elegir un dedo en un switch...
-    read = finger_switch();
+    servo = finger_switch();
     //moverlo con grados
     while((ang = Serial.parseInt()) >= 0){
         if(ang > 0 && ang <= 180){
+            Serial.print("Moviendo a ");
             Serial.println(ang);
             delay(100);
-            servs[read].write(ang);
+            servs[servo].write(ang);
         }
     } 
     Serial.println("Saliendo...");
@@ -183,18 +188,46 @@ void right_fingers(){
 }
 
 void play_menu(){
+
     repeater(LENGTH, '+','-','+');
     Serial.println("\n| Que queres mover?\t\t\t|");
     repeater(LENGTH, '+','-','+');
     Serial.println("\n| -1. Salir.\t\t\t\t|");
-    Serial.println("|  2. Muñeca\t\t\t\t|");
-    Serial.println("|  3. Meñique\t\t\t\t|");
-    Serial.println("|  4. Anular\t\t\t\t|");
-    Serial.println("|  5. Mayor\t\t\t\t|");
-    Serial.println("|  6. Indice\t\t\t\t|");
-    Serial.println("|  7. Pulgar\t\t\t\t|");
+    Serial.println("|    2. Muñeca\t\t\t\t|");
+    Serial.println("|    3. Meñique\t\t\t\t|");
+    Serial.println("|    4. Anular\t\t\t\t|");
+    Serial.println("|    5. Mayor\t\t\t\t|");
+    Serial.println("|    6. Indice\t\t\t\t|");
+    Serial.println("|    7. Pulgar\t\t\t\t|");
     repeater(LENGTH, '+','-','+');
 
     right_fingers();
+    return;
+}
+
+void chill(){
+    servs[Rpinky].write(180);
+    servs[Ranular].write(0);
+    servs[Rmayor].write(0);
+    servs[Rindice].write(0);
+    servs[Rpulgar].write(180);
+
+    Serial.println("Done...");
+    return;
+}
+
+void l_dedos(){
+    servs[Rpulgar].write(180);
+    servs[Rindice].write(180);
+    for(int i=Rmayor; i<=Rpinky; i--)
+        servs[i].write(CLOSE);
+    
+    Serial.println("Done...");
+    return;
+}
+
+void elTiti(){
+
+    Serial.println("Worl in progress... sryyyy");
     return;
 }

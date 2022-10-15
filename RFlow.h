@@ -48,6 +48,21 @@ void right_input(){
                 play_menu();
                 right_menu();
                 break;
+            case 10:
+                Serial.println("De chillllll");
+                chill();
+                break;
+            case 11:
+                Serial.println("A, B, C, D, EEEHHHHH");
+                l_dedos();
+                break;
+            case 12:
+                Serial.println("Pffff rlly bro?");
+                elTiti();
+                break;
+            case 13:
+                Serial.println("Todavia no pibe");
+                break;
             default:
                 break; 
         }

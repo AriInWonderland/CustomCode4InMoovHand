@@ -1,5 +1,8 @@
-#define STANDBY 15
 #define NSERVOS 20
+
+//180 degrees opens fingers, 0 closes them
+#define OPEN 180
+#define CLOSE 0
 
 Servo servs[NSERVOS];
 

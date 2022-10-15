@@ -11,7 +11,11 @@ void right_menu(){
     Serial.println("|  6. Otaku o peronista??.\t\t|");
     Serial.println("|  7. Slowwwwwww home.\t\t\t|");
     Serial.println("|  8. Home\t\t\t\t|");
-    Serial.println("|  9. Let's play.\t\t\t|");
+    Serial.println("|  9. Individual.\t\t\t\t|");
+    Serial.println("| 10. De chill.\t\t\t\t|");
+    Serial.println("| 11. RKT.\t\t\t\t\t|");
+    Serial.println("| 12. El titi\t\t\t\t|");
+    Serial.println("| 13. Comisteee\t\t\t\t|");
     repeater(LENGTH, '+','-','+');
     Serial.print("\n\n\n");   
 
