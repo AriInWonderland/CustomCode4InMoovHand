@@ -63,6 +63,23 @@ void right_input(){
             case 13:
                 Serial.println("Todavia no pibe");
                 break;
+            case 14:
+                Serial.println("Piedra");
+                rock();
+                break;
+            case 15:
+                Serial.println("Papel");
+                paper();
+                break;
+            case 16:
+                Serial.println("Tijera");
+                Otaku_O_Peronista(servs);
+                break;    
+            case 17:
+                Serial.println("Vamos a jugar!!!");
+                seeno();
+                break;
+
             default:
                 break; 
         }

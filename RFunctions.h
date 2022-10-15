@@ -231,3 +231,57 @@ void elTiti(){
     Serial.println("Worl in progress... sryyyy");
     return;
 }
+
+void rock(){
+    for(int i=Rpinky; i<=Rpulgar; i++){
+        if(i==Rindice)
+            move_index(0);
+        else
+            servs[i].write(CLOSE);
+    }
+    delay(100);
+    Serial.println("Done...");
+}
+
+void paper(){
+    for(int i=Rpinky; i<=Rpulgar; i++){
+        if(i==Rindice)
+            move_index(1);
+        else
+            servs[i].write(180);
+    }
+    delay(100);
+    Serial.println("Done...");
+}
+
+void seeno(){
+    int c = random() % 3; 
+
+    delay(1500);
+    Serial.println("Piedra...");
+    delay(1500);
+    Serial.println("Papel...");
+    delay(1500);
+    Serial.println("O...");
+    delay(1500);
+    Serial.println("Tijeras!!!");
+    Serial.println("");
+
+    if(c < 2){
+        rock();
+        delay(150);
+        Serial.println("PIEDRA!");
+    }
+    else if(c >=2 && c <3){
+        paper();
+        delay(150);
+        Serial.println("PAPEL!");
+    }
+    else {
+        Otaku_O_Peronista(servs);
+        delay(150);
+        Serial.println("TIJERA!");
+    }
+
+    Serial.println("Done...");
+}

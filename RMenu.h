@@ -15,7 +15,11 @@ void right_menu(){
     Serial.println("| 10. De chill.\t\t\t\t|");
     Serial.println("| 11. RKT.\t\t\t\t\t|");
     Serial.println("| 12. El titi\t\t\t\t|");
-    Serial.println("| 13. Comisteee\t\t\t\t|");
+//    Serial.println("| 13. Comisteee\t\t\t\t|");
+    Serial.println("| 14. Piedra\t\t\t\t|");
+    Serial.println("| 15. Papel\t\t\t\t|");
+    Serial.println("| 16. Tijera\t\t\t\t|");
+    Serial.println("| 17. Game\t\t\t\t|");
     repeater(LENGTH, '+','-','+');
     Serial.print("\n\n\n");   
 
